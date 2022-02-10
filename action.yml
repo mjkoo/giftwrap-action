@@ -1,0 +1,11 @@
+name: 'Giftwrap'
+description: 'Package and run a cargo fuzz harness in Mayhem'
+inputs:
+  cargo-fuzz-target:
+    description: 'Cargo fuzz target to run'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.cargo-fuzz-target }}
